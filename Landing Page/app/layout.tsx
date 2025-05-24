@@ -13,15 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FarmAI - Digital Farmer Assistance with AI & Voice Technology",
+  title:
+    "SmartAgri AI Voice Assistance - Digital Farmer Assistance with AI & Voice Technology",
   description:
-    "Revolutionize your farming with FarmAI's AI-powered digital assistant. Get real-time crop insights, weather updates, and expert advice through voice commands. Smart farming made simple.",
+    "Revolutionize your farming with SmartAgri AI Voice Assistance's AI-powered digital assistant. Get real-time crop insights, weather updates, and expert advice through voice commands. Smart farming made simple.",
   keywords:
     "farming, agriculture, AI, voice assistant, crop monitoring, smart farming, digital agriculture, farm management",
-  authors: [{ name: "FarmAI Team" }],
+  authors: [{ name: "SmartAgri AI Voice Assistance Team" }],
   robots: "index, follow",
   openGraph: {
-    title: "FarmAI - Smart Farming with AI & Voice Technology",
+    title:
+      "SmartAgri AI Voice Assistance - Smart Farming with AI & Voice Technology",
     description:
       "Transform your farming operations with AI-powered insights and voice-activated assistance.",
     type: "website",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FarmAI - Digital Farmer Assistance",
+    title: "SmartAgri AI Voice Assistance - Digital Farmer Assistance",
     description:
       "AI-powered farming assistant with voice technology for modern agriculture.",
   },
