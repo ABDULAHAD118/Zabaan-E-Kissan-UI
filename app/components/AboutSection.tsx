@@ -1,70 +1,71 @@
 import React from "react";
 
 const AboutSection = () => {
-  const benefits = [
+  const workflowSteps = [
     {
-      icon: "🚀",
-      title: "Increase Productivity",
-      description: "Boost your farm's efficiency by up to 40%",
+      title: "1. Detect",
+      description:
+        "Upload or scan crop leaf images to detect supported diseases for corn, wheat, rice, and sugarcane.",
     },
     {
-      icon: "💰",
-      title: "Reduce Costs",
-      description: "Save on water, fertilizers, and labor costs",
+      title: "2. Ask",
+      description:
+        "Use chatbot voice or text to ask about treatment, disease causes, and precaution steps in English or Urdu.",
     },
     {
-      icon: "🌱",
-      title: "Sustainable Farming",
-      description: "Promote eco-friendly farming practices",
+      title: "3. Verify Land",
+      description:
+        "Use coordinate-based remote sensing to analyze crop land through satellite signals and receive next-step guidance.",
+    },
+    {
+      title: "4. Track Prices",
+      description:
+        "Filter by crop and city, review daily and previous rates, and share market updates with team members.",
     },
   ];
 
-  const features = [
-    "24/7 AI-powered farming assistance",
-    "Voice-activated commands in Urdu languages",
-    "Real-time crop monitoring and alerts",
-    "Data-driven farming recommendations",
+  const productHighlights = [
+    "Bilingual user experience for English and Urdu users",
+    "Dark mode support for better readability in low-light use",
+    "Practical recommendations after disease prediction",
+    "Market units shown by commodity: kg, dozen, or 100 pieces",
   ];
 
   return (
     <section
-      id="about"
-      className="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+      id="workflow"
+      className="bg-gradient-to-r from-green-700 to-emerald-700 py-20 text-white"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-start gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Empowering Farmers with Technology
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+              From Field Problem to Action Plan
             </h2>
-            <p className="text-xl mb-6">
-              Our digital farmer assistance platform combines cutting-edge AI
-              technology with voice recognition to make farming more efficient,
-              sustainable, and profitable.
+            <p className="mb-6 text-lg text-white/90">
+              Zabaan-E-Kisaan is designed for real farm operations. Farmers can
+              diagnose, ask, verify, and decide quickly without switching
+              between multiple tools.
             </p>
             <ul className="space-y-3">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mr-3">
+              {productHighlights.map((highlight) => (
+                <li key={highlight} className="flex items-center">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-white/20">
                     ✓
                   </span>
-                  {feature}
+                  {highlight}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4">
-              Why Choose SmartAgri AI Voice Assistance?
-            </h3>
+
+          <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
+            <h3 className="mb-4 text-2xl font-bold">How Farmers Use the App</h3>
             <div className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start">
-                  <span className="text-2xl mr-3">{benefit.icon}</span>
-                  <div>
-                    <h4 className="font-semibold">{benefit.title}</h4>
-                    <p className="text-white/80">{benefit.description}</p>
-                  </div>
+              {workflowSteps.map((step) => (
+                <div key={step.title}>
+                  <h4 className="font-semibold">{step.title}</h4>
+                  <p className="text-white/85">{step.description}</p>
                 </div>
               ))}
             </div>

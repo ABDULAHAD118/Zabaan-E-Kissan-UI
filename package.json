@@ -1,5 +1,5 @@
 {
-  "name": "smartagri-ai-voice-assistance",
+  "name": "zabaan-e-kisaan-ui",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@next/env": "^15.1.8",
-    "next": "15.1.8",
+    "next": "16.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

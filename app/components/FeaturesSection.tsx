@@ -7,70 +7,72 @@ const FeaturesSection = () => {
       bgColorClass:
         "bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-600",
       iconBgClass: "bg-green-600",
-      icon: "🎤",
-      title: "Voice Assistant",
+      icon: "🦠",
+      title: "Disease Detection Module",
       description:
-        "Ask questions about your crops, get weather updates, and receive farming advice using natural voice commands.",
+        "Detect selected leaf diseases and get immediate recommendations for next actions.",
+      points: [
+        "Supported crops: corn, wheat, rice, and sugarcane.",
+        "Predicts selected leaf diseases, not every disease type.",
+        "Shows recommendations on what to do after prediction.",
+        "Ask the AI chatbot for disease details and precaution steps.",
+      ],
     },
     {
       bgColorClass:
         "bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-600",
       iconBgClass: "bg-blue-600",
       icon: "🤖",
-      title: "AI Crop Analysis",
+      title: "AI Chatbot + Remote Sensing",
       description:
-        "Advanced AI algorithms analyze your crops for diseases, pests, and growth optimization recommendations.",
+        "Bilingual smart assistant with voice and satellite-driven guidance.",
+      points: [
+        "Works in English and Urdu conversations.",
+        "Voice-to-text and text-to-voice support.",
+        "Remote sensing by coordinate for crop and land checks.",
+        "Satellite guidance is designed for agricultural land, not residential land.",
+      ],
     },
     {
       bgColorClass:
         "bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-gray-700 dark:to-gray-600",
       iconBgClass: "bg-yellow-600",
-      icon: "🌤️",
-      title: "Weather Insights",
+      icon: "📊",
+      title: "Crop Prices Module",
       description:
-        "Real-time weather data and forecasts tailored to your farm location for better planning.",
-    },
-    {
-      bgColorClass:
-        "bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-700 dark:to-gray-600",
-      iconBgClass: "bg-purple-600",
-      icon: "📈",
-      title: "Market Prices",
-      description:
-        "Stay updated with real-time crop prices and market trends to make informed selling decisions.",
-    },
-    {
-      bgColorClass:
-        "bg-gradient-to-br from-red-50 to-red-100 dark:from-gray-700 dark:to-gray-600",
-      iconBgClass: "bg-red-600",
-      icon: "👨‍🌾",
-      title: "Expert Support",
-      description:
-        "Connect with agricultural experts and get personalized advice for your specific farming challenges.",
+        "Daily market prices with history, filters, and sharing support for team decisions.",
+      points: [
+        "Prices update daily from official government websites.",
+        "View latest and previous prices in one place.",
+        "Units include kg, dozen, and 100 pieces based on crop type.",
+        "Filter by crop and city, then share prices with other members.",
+      ],
+      id: "prices",
     },
   ];
 
   return (
-    <section id="features" className="py-20 bg-white dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Powerful Features for Modern Farmers
+    <section id="modules" className="bg-white py-20 dark:bg-gray-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+            Built Around Real Farming Workflows
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            Everything you need to optimize your farming operations
+          <p className="text-lg text-gray-600 dark:text-gray-300 md:text-xl">
+            Three focused modules designed for fast, practical field decisions.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          {features.map((feature, index) => (
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {features.map((feature) => (
             <FeatureCard
-              key={index}
+              id={feature?.title}
               bgColorClass={feature.bgColorClass}
               iconBgClass={feature.iconBgClass}
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
+              points={feature.points}
             />
           ))}
         </div>

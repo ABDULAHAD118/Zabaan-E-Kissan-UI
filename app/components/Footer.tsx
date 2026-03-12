@@ -1,55 +1,58 @@
 import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
   const productLinks = [
-    { name: "Features", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "API", href: "#" },
-    { name: "Documentation", href: "#" },
+    { name: "Disease Detection", href: "/#modules" },
+    { name: "AI Chatbot", href: "/#workflow" },
+    { name: "Remote Sensing", href: "/#workflow" },
+    { name: "Crop Prices", href: "/#prices" },
   ];
 
-  const supportLinks = [
-    { name: "Help Center", href: "#" },
-    { name: "Contact Us", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Training", href: "#" },
+  const appLinks = [
+    { name: "Download Android App", href: "/Zabaan-E-Kisaan.apk" },
+    { name: "Bilingual Support", href: "/#home" },
+    { name: "Dark Mode UI", href: "/#home" },
+    { name: "Daily Price Updates", href: "/#prices" },
   ];
 
   const connectLinks = [
-    { name: "Twitter", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "Facebook", href: "#" },
-    { name: "YouTube", href: "#" },
+    { name: "Contact", href: "/#contact" },
+    { name: "Modules", href: "/#modules" },
+    { name: "Workflow", href: "/#workflow" },
+    { name: "Prices", href: "/#prices" },
   ];
 
   return (
-    <footer id="contact" className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer id="contact" className="bg-gray-900 py-12 text-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">🌱</span>
-              </div>
-              <span className="text-xl font-bold">
-                SmartAgri AI Voice Assistance
-              </span>
+            <div className="mb-4 flex items-center space-x-2">
+              <Image
+                src="/Zabaan-E-Kissan.png"
+                alt="Zabaan-E-Kisaan logo"
+                width={32}
+                height={32}
+                className="rounded-md"
+              />
+              <span className="text-xl font-bold">Zabaan-E-Kisaan</span>
             </div>
             <p className="text-gray-400">
-              Empowering farmers with AI and voice technology for smarter, more
-              sustainable agriculture.
+              Agriculture-first AI platform with bilingual support, remote
+              sensing, and practical daily decisions for farmers.
             </p>
           </div>
 
-          <FooterColumn title="Product" links={productLinks} />
-          <FooterColumn title="Support" links={supportLinks} />
-          <FooterColumn title="Connect" links={connectLinks} />
+          <FooterColumn title="Modules" links={productLinks} />
+          <FooterColumn title="App" links={appLinks} />
+          <FooterColumn title="Navigate" links={connectLinks} />
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} SmartAgri AI Voice Assistance. All
-            rights reserved. Built with Next.js and Tailwind CSS.
+            &copy; {new Date().getFullYear()} Zabaan-E-Kisaan. All rights
+            reserved.
           </p>
         </div>
       </div>
@@ -65,11 +68,11 @@ interface FooterColumnProps {
 const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-4">{title}</h3>
+      <h3 className="mb-4 text-lg font-semibold">{title}</h3>
       <ul className="space-y-2 text-gray-400">
-        {links.map((link, index) => (
-          <li key={index}>
-            <a href={link.href} className="hover:text-white transition-colors">
+        {links.map((link) => (
+          <li key={`${title}-${link.name}`}>
+            <a href={link.href} className="transition-colors hover:text-white">
               {link.name}
             </a>
           </li>
