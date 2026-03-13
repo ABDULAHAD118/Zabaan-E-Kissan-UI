@@ -54,8 +54,8 @@ jobs:
             cp -r /home/deploy/config/Zabaan-E-Kissan/. /home/deploy/Zabaan-E-Kissan
             cd /home/deploy/Zabaan-E-Kissan
            
-            pm2 restart ecosystem.config.cjs --env production || pm2 start ecosystem.config.cjs --env production
-            rm /tmp/Zabaan-E-Kissan.zip
+            pm2 restart ecosystem.config.js --env production || pm2 start ecosystem.config.js --env production
+            rm /home/deploy/Zabaan-E-Kissan.zip
           EOF
 
       - name: Clean up
